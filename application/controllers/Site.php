@@ -22,6 +22,8 @@ class Site extends CI_Controller
         //Get Login credentials username & password
         $username = $this->input->post('username');
         $password = md5($this->input->post('username'));
+
+        
        } 
        else
        {
