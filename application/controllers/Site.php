@@ -23,6 +23,17 @@ class Site extends CI_Controller
         $username = $this->input->post('username');
         $password = md5($this->input->post('username'));
 
+        $user_id = $this->user_model->login($username,$password);
+        if($user_id) {
+            $user_data = array (
+              'id' => $user_id->id, 
+              'username' => $username,
+              'user_group' => $user_group,
+              'user_status' => $user_status,
+              'user_email' => $user_email,
+              'logged_in' => true
+            );
+        }
         
        } 
        else
