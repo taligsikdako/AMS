@@ -11,7 +11,7 @@ class Pages extends CI_Controller
         }
 
         $data['title'] = ucfirst($page); // Capitalize the first letter
-        $data['title']   = ucfirst('IT Assets & Management');
+        $data['title']   = ucfirst('Tasker Login System');
         $this->load->view('templates/login_header', $data);
         $this->load->view('pages/'.$page, $data);
         $this->load->view('templates/login_footer', $data);

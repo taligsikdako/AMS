@@ -16,7 +16,7 @@
     <form name =""action="<?php echo base_url(); ?>index.php/site/login_validation"  method="post">
     <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="KjrG1Hob1uJUSjxSCtlMHXD0JIyPvdVSOHwr90w8bSkCEiWYQcqzrm1r06wPxLFgXPcTRJy91k+BTMEZSDLhYQ==" />      <input type="hidden" name="ga_id" class="js-octo-ga-id-input">
       <div class="auth-form-header p-0">
-        <h1>Sign in to IT System</h1>
+        <h1>Sign in to Tasker Login System</h1>
       </div>
 
 
@@ -27,6 +27,9 @@
 
       <div class="auth-form-body mt-3">
       <span class="text-danger"><?php echo validation_errors(); ?></span>
+      <?php if($this->session->flashdata('failed_login')) : ?>
+                  <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('failed_login').'</p>'; ?>
+                  <?php endif; ?>
         <label for="login_field">
           Username
         </label>
@@ -56,17 +59,6 @@
 
       </main>
   </div>
-
-        <!-- <div class="footer container-lg p-responsive py-6 mt-6 f6" role="contentinfo">
-    <ul class="list-style-none d-flex flex-justify-center">
-        <li class="mr-3"><a href="/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
-        <li class="mr-3"><a href="/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
-        <li class="mr-3"><a href="https://help.github.com/articles/github-security/" data-ga-click="Footer, go to security, text:security">Security</a></li>
-          <li><a class="link-gray" data-ga-click="Footer, go to contact, text:contact" href="https://github.com/contact">Contact GitHub</a></li>
-    </ul>
-  </div> -->
-
-
 
   <div id="ajax-error-message" class="ajax-error-message flash flash-error">
     <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg>
