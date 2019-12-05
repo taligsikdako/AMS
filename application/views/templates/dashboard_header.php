@@ -20,8 +20,8 @@ The above copyright notice and this permission notice shall be included in all c
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url(); ?>/assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="<?php echo base_url(); ?>/assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url(); ?>assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
   <?php echo $title; ?>
@@ -32,12 +32,9 @@ The above copyright notice and this permission notice shall be included in all c
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <!-- CSS Files -->
   
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/paper-dashboard.css" rel="stylesheet">
-  <!-- <link href="../assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" /> -->
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <!-- <link href="../assets/demo/demo.css" rel="stylesheet" /> -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/demo/demo.css" >
+  <link  href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet">
+  <link  href="<?php echo base_url(); ?>assets/demo/demo.css" rel="stylesheet" >
 
 </head>
 
@@ -50,13 +47,13 @@ The above copyright notice and this permission notice shall be included in all c
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+        <a href="<?php echo base_url();?>index.php/site/dashboard" class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="<?php echo base_url(); ?>/assets/img/logo-small.png">
+            <img src="<?php echo base_url(); ?>assets/img/logo-small.png">
           </div>
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+        <a href="<?php echo base_url(); ?>" class="simple-text logo-normal">
+          Arjay Cobarde
           <!-- <div class="logo-image-big">
             <img src="../assets/img/logo-big.png">
           </div> -->
@@ -64,52 +61,53 @@ The above copyright notice and this permission notice shall be included in all c
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="active ">
-            <a href="./dashboard.html">
-              <i class="nc-icon nc-bank"></i>
+          <!-- <li class="active "> -->
+          <li>
+            <a href="<?php echo base_url();?>index.php/site/dashboard">
+            <i class="fa fa-home" aria-hidden="true"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="./icons.html">
-              <i class="nc-icon nc-diamond"></i>
-              <p>Icons</p>
+          <a href="<?php echo base_url();?>index.php/site/attendance">
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+              <p>Attendance Logs</p>
             </a>
           </li>
           <li>
-            <a href="./map.html">
-              <i class="nc-icon nc-pin-3"></i>
-              <p>Maps</p>
+          <a href="<?php echo base_url();?>index.php/site/manage_users">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <p>Manage Account</p>
             </a>
           </li>
           <li>
             <a href="./notifications.html">
-              <i class="nc-icon nc-bell-55"></i>
+            <i class="fa fa-bell" aria-hidden="true"></i>
               <p>Notifications</p>
             </a>
           </li>
           <li>
             <a href="./user.html">
-              <i class="nc-icon nc-single-02"></i>
+            <i class="fa fa-user" aria-hidden="true"></i>
               <p>User Profile</p>
             </a>
           </li>
           <li>
             <a href="./tables.html">
-              <i class="nc-icon nc-tile-56"></i>
-              <p>Table List</p>
+            <i class="fa fa-table" aria-hidden="true"></i>
+              <p>Activity List</p>
             </a>
           </li>
           <li>
             <a href="./typography.html">
-              <i class="nc-icon nc-caps-small"></i>
-              <p>Typography</p>
+            <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+              <p>Training Schedule</p>
             </a>
           </li>
           <li class="active-pro">
             <a href="./upgrade.html">
-              <i class="nc-icon nc-spaceship"></i>
-              <!-- <p>Upgrade to PRO</p> -->
+            <i class="fa fa-rocket" aria-hidden="true"></i>
+              <p>Upgrade to PRO</p>
             </a>
           </li>
         </ul>
@@ -140,7 +138,7 @@ The above copyright notice and this permission notice shall be included in all c
                 <input type="text" value="" class="form-control" placeholder="Search...">
                 <div class="input-group-append">
                   <div class="input-group-text">
-                    <i class="nc-icon nc-zoom-split"></i>
+                  <i class="fa fa-search" aria-hidden="true"></i>
                   </div>
                 </div>
               </div>
@@ -148,7 +146,7 @@ The above copyright notice and this permission notice shall be included in all c
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link btn-magnify" href="#pablo">
-                  <i class="nc-icon nc-layout-11"></i>
+                <i class="fa fa-columns" aria-hidden="true"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Stats</span>
                   </p>
@@ -156,7 +154,7 @@ The above copyright notice and this permission notice shall be included in all c
               </li>
               <li class="nav-item btn-rotate dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="nc-icon nc-bell-55"></i>
+                <i class="fa fa-bell" aria-hidden="true"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Some Actions</span>
                   </p>
@@ -169,7 +167,7 @@ The above copyright notice and this permission notice shall be included in all c
               </li>
               <li class="nav-item">
                 <a class="nav-link btn-rotate" href="#pablo">
-                  <i class="nc-icon nc-settings-gear-65"></i>
+                <i class="fa fa-wrench" aria-hidden="true"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Account</span>
                   </p>

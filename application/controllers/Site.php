@@ -65,11 +65,46 @@ class Site extends CI_Controller
 
     function dashboard()
     {
+      if ($this->session->userdata('logged_in'))
+      {
+        $data['title'] = "Admin - Tasker Dashboard";
+        $this->load->view('templates/dashboard_header',$data);
+        $this->load->view('pages/dashboard/admin_dashboard');
+        $this->load->view('templates/dashboard_footer');
+      }
+      else  {
+        redirect(base_url());
+      }
+   
+    }
 
-      $data['title'] = "Admin - Tasker Dashboard";
+    function attendance()
+    {
+
+      $data['title'] = "Attendance";
       $this->load->view('templates/dashboard_header',$data);
-      $this->load->view('pages/dashboard/admin_dashboard');
+      $this->load->view('pages/dashboard/attendance');
       $this->load->view('templates/dashboard_footer');
     }
+
+    function manage_users()
+    {
+      if ($this->session->userdata('logged_in'))
+      {
+      $data['title'] = "Manage Users";
+      $this->load->view('templates/dashboard_header',$data);
+      $this->load->view('pages/dashboard/manage_users');
+      $this->load->view('templates/dashboard_footer');
+      }
+      else {
+        redirect(base_url());
+      }
+    }
+
+    function logout()
+		{
+			$this->session->unset_userdata('logged_in');
+			redirect(base_url());
+		}
 
 }

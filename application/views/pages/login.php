@@ -48,7 +48,11 @@
 <input type="hidden" name="timestamp_secret" value="03c8c95566925c56bc3b29fea659ba204a46ca2eabeb9097baa46504c13b222a" class="form-control" />
 
         <input type="submit" name="commit" value="Login"  class="btn btn-primary btn-block" data-disable-with="Loggin in…" />
+        <div class="text-center">
+                            <a class="small" id="btnAddUserModal" data-toggle="modal" data-target="#myModal">Create an Account!</a>
+                  </div>
       </div>
+    
 </form>
 
       <!-- <p class="create-account-callout mt-3">
@@ -68,7 +72,30 @@
     You can’t perform that action at this time.
   </div>
 
-
+<!-- Modal Add Users -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
     
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!--  -->
+
+
+  
    
 
