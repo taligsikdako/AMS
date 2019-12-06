@@ -35,6 +35,9 @@ The above copyright notice and this permission notice shall be included in all c
   <link  href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?php echo base_url(); ?>assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet">
   <link  href="<?php echo base_url(); ?>assets/demo/demo.css" rel="stylesheet" >
+  <!-- Modal Account creation -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -70,7 +73,7 @@ The above copyright notice and this permission notice shall be included in all c
           </li>
           <li>
           <a href="<?php echo base_url();?>index.php/site/attendance">
-            <i class="fa fa-sign-in" aria-hidden="true"></i>
+          <i class="fa fa-times-circle-o" aria-hidden="true"></i>
               <p>Attendance Logs</p>
             </a>
           </li>
@@ -166,8 +169,8 @@ The above copyright notice and this permission notice shall be included in all c
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link btn-rotate" href="#pablo">
-                <i class="fa fa-wrench" aria-hidden="true"></i>
+                <a class="nav-link btn-rotate" href="<?php echo base_url();?>index.php/site/logout" placeholder="Hey">
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Account</span>
                   </p>

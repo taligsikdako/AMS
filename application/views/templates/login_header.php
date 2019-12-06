@@ -27,7 +27,7 @@
     <meta name="description" content="GitHub is where people build software. More than 40 million people use GitHub to discover, fork, and contribute to over 100 million projects.">
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
-  <meta property="fb:app_id" content="1401488693436528">
+  <!-- <meta property="fb:app_id" content="1401488693436528">
 
     <meta property="og:url" content="https://github.com">
     <meta property="og:site_name" content="GitHub">
@@ -55,17 +55,17 @@
     <meta property="twitter:description" content="GitHub is where people build software. More than 40 million people use GitHub to discover, fork, and contribute to over 100 million projects.">
     <meta property="twitter:image:src" content="https://github.githubassets.com/images/modules/open_graph/github-logo.png">
     <meta property="twitter:image:width" content="1200">
-    <meta property="twitter:image:height" content="1200">
+    <meta property="twitter:image:height" content="1200"> -->
 
   <link rel="assets" href="https://github.githubassets.com/">
   
   
-  <meta name="request-id" content="94DA:519D:2505739:346F0F1:5DAB3616" data-pjax-transient>
+  <!-- <meta name="request-id" content="94DA:519D:2505739:346F0F1:5DAB3616" data-pjax-transient> -->
 
 
   
 
-  <meta name="selected-link" value="/login" data-pjax-transient>
+  <!-- <meta name="selected-link" value="/login" data-pjax-transient>
 
       <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
     <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
@@ -95,7 +95,7 @@
 
   <meta name="html-safe-nonce" content="b5c4ce196f8428aa6824e9268df25f24f76dcfdb">
 
-  <meta http-equiv="x-pjax-version" content="1cf606da5c0eb0678f3df7841bd6b83a">
+  <meta http-equiv="x-pjax-version" content="1cf606da5c0eb0678f3df7841bd6b83a"> -->
   
 
 

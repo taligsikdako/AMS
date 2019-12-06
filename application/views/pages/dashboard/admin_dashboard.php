@@ -12,8 +12,8 @@
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">Registered Users</p>
-                      <p class="card-title">3000
+                      <p class="card-category">Total Member's</p>
+                      <p class="card-title"><?php echo $totalUsersNo; ?>
                         <p>
                     </div>
                   </div>

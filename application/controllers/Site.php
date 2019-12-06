@@ -8,6 +8,7 @@ class Site extends CI_Controller
     {
         parent:: __construct();
         $this->load->helper('url');
+        $this->load->model('report_model');
         
     }
 
@@ -67,9 +68,13 @@ class Site extends CI_Controller
     {
       if ($this->session->userdata('logged_in'))
       {
+        // Report Get NUmber of Registered Users
+				$usersNo = $this->report_model->get_NumberOfUsers();
+        $data['totalUsersNo'] = $usersNo[0]->no;
+        
         $data['title'] = "Admin - Tasker Dashboard";
         $this->load->view('templates/dashboard_header',$data);
-        $this->load->view('pages/dashboard/admin_dashboard');
+        $this->load->view('pages/dashboard/admin_dashboard',$data);
         $this->load->view('templates/dashboard_footer');
       }
       else  {
