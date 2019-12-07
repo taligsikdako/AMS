@@ -44,19 +44,19 @@
 
     <div class="col-sm-6 mb-3 mb-sm-0">
     <label class="col-lg mb-7 mb-sm-0 small">Contact Number</label>
-    <input type="text" class="form-control form-control-user" name="contactNumber" value="<?php echo set_value('contactNumber');?>" >
+    <input type="number" class="form-control form-control-user" name="contactNumber" value="<?php echo set_value('contactNumber');?>" >
     <span class="text-danger"><?php echo form_error('contactNumber'); ?></span>
     </div>              
     </div>
 
-    <!-- <div class="form-group row">
+    <div class="form-group row">
     <div class="col-sm-6 mb-3 mb-sm-0">
-    <label class="col-lg mb-7 mb-sm-0 small">Location</label>
-    <input type="text" class="form-control form-control-user" name="location" value="<?php echo set_value('Location');?>">
-    <span class="text-danger"><?php echo form_error('lOcation'); ?></span>
+    <label class="col-lg mb-7 mb-sm-0 small">Address</label>
+    <input type="text" class="form-control form-control-user" name="address" value="<?php echo set_value('address');?>">
+    <span class="text-danger"><?php echo form_error('address'); ?></span>
     </div>
                
-    </div> -->
+    </div>
 
     
    

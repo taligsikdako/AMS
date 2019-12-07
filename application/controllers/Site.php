@@ -7,9 +7,8 @@ class Site extends CI_Controller
     function __construct()
     {
         parent:: __construct();
-        $this->load->helper('url');
-        $this->load->model('report_model');
-        
+        $this->load->helper('url');        
+             
     }
 
     function index()
@@ -35,16 +34,17 @@ class Site extends CI_Controller
 
         $user_id = $this->user_model->login($username,$password);
         if($user_id) {
+          //create sessions
             $user_data = array (
               'id' => $user_id->id, 
-              'username' => $username,
-            //   'user_group' =>$user_id->$user_group,
-            //   'user_status' =>$user_id->$user_status,
-            //   'user_email' =>$user_id->$user_email,
+              'username' => $username,           
+              // 'user_group' => $user_id->$user_group,
+              // 'user_status' => $user_id->$user_status,
+              // 'user_email' => $user_id->$user_email,
               'logged_in' => true
             );
-
             $this->session->set_userdata($user_data);
+
             $this->session->set_flashdata('user_loggedin','Welcome, ');
             redirect(base_url() . 'index.php/site/dashboard');
             // die('login success');
@@ -74,6 +74,7 @@ class Site extends CI_Controller
         
         $data['title'] = "Admin - Tasker Dashboard";
         $this->load->view('templates/dashboard_header',$data);
+        $this->load->view('templates/dashboard_nav', $data);
         $this->load->view('pages/dashboard/admin_dashboard',$data);
         $this->load->view('templates/dashboard_footer');
       }
@@ -83,11 +84,23 @@ class Site extends CI_Controller
    
     }
 
+    function user_dashboard()
+    {
+       // Report Get NUmber of Registered Users
+				$usersNo = $this->report_model->get_NumberOfUsers();
+        $data['totalUsersNo'] = $usersNo[0]->no;
+      $data['title'] = "User - Tasker Dashboard";
+      $this->load->view('templates/dashboard_header',$data);
+      $this->load->view('pages/dashboard/user_dashboard',$data);
+      $this->load->view('templates/dashboard_footer');
+    }
+
     function attendance()
     {
 
       $data['title'] = "Attendance";
       $this->load->view('templates/dashboard_header',$data);
+      $this->load->view('templates/dashboard_nav',$data);
       $this->load->view('pages/dashboard/attendance');
       $this->load->view('templates/dashboard_footer');
     }
@@ -96,8 +109,11 @@ class Site extends CI_Controller
     {
       if ($this->session->userdata('logged_in'))
       {
-      $data['title'] = "Manage Users";
+      $data['getAllUsers']   = $this->user_model->getAllUsers();
+      $data['header_title'] = "Manage Registered Taskers";
+      $data['title'] = "Manage Taskers";
       $this->load->view('templates/dashboard_header',$data);
+      $this->load->view('templates/dashboard_nav',$data);
       $this->load->view('pages/dashboard/manage_users');
       $this->load->view('templates/dashboard_footer');
       }
