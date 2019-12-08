@@ -3,7 +3,7 @@
         <div class="col-md-8">
             <div class="card card-user">
               <div class="card-header">
-                <h5 class="card-title"><?php echo $header_title; ?></h5>
+                <h5 class="card-title"><?php echo $body_title; ?></h5>
               </div>
               <div class="card-body">
                 <!-- <form> -->
@@ -18,7 +18,7 @@
                         foreach($fetch_user->result() as $row )
                         {                    
                       ?>
-                        <label>Usernamae (disabled)</label>
+                        <label>Username</label>
                         <!-- <input type="text" class="form-control" disabled="" placeholder="Username" value=""> -->
                         <p class="form-control"> <?php echo $row->username;?></p>
                       </div>

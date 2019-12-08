@@ -16,7 +16,7 @@
     <form name =""action="<?php echo base_url(); ?>index.php/site/login_validation"  method="post">
     <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="KjrG1Hob1uJUSjxSCtlMHXD0JIyPvdVSOHwr90w8bSkCEiWYQcqzrm1r06wPxLFgXPcTRJy91k+BTMEZSDLhYQ==" />      <input type="hidden" name="ga_id" class="js-octo-ga-id-input">
       <div class="auth-form-header p-0">
-        <h1>Sign in to Tasker Login System</h1>
+        <h1>Attendance Monitoring System</h1>
       </div>
 
 

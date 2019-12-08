@@ -30,7 +30,7 @@
           <li>
           <a href="<?php echo base_url();?>index.php/site/attendance">
           <i class="fa fa-times-circle-o" aria-hidden="true"></i>
-              <p>Attendance Logs</p>
+              <p>Attendance</p>
             </a>
           </li>
           <li>
@@ -85,7 +85,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo"><?php echo $title; ?></a>
+            <a class="navbar-brand" href="#pablo"><?php echo $nav_title; ?></a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>

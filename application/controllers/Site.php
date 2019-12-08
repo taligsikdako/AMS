@@ -14,7 +14,7 @@ class Site extends CI_Controller
     function index()
     {
         $data['title'] = ucfirst($page); // Capitalize the first letter
-        $data['title']   = ucfirst('Tasker Login System');
+        $data['title']   = ucwords('Attendance Monitoring System');
         $this->load->view('templates/login_header', $data);
         $this->load->view('pages/'.$page, $data);
         $this->load->view('templates/login_footer', $data);
@@ -57,7 +57,7 @@ class Site extends CI_Controller
        } 
        else   {
         $data['title'] = ucfirst("Page"); // Capitalize the first letter
-        $data['title']   = ucfirst('Tasker Login System');
+        $data['title']   = ucfirst('Attendance Monitoring System');
         $this->load->view('templates/login_header', $data);
         $this->load->view('pages/login', $data);
         $this->load->view('templates/login_footer', $data);
@@ -72,7 +72,9 @@ class Site extends CI_Controller
 				$usersNo = $this->report_model->get_NumberOfUsers();
         $data['totalUsersNo'] = $usersNo[0]->no;
         
-        $data['title'] = "Admin - Tasker Dashboard";
+        $data['header_title'] = "AMS - Admin Dashboard";
+        $data['nav_title'] = "Admin Dashboard ";
+        
         $this->load->view('templates/dashboard_header',$data);
         $this->load->view('templates/dashboard_nav', $data);
         $this->load->view('pages/dashboard/admin_dashboard',$data);
@@ -96,9 +98,9 @@ class Site extends CI_Controller
     }
 
     function attendance()
-    {
-
-      $data['title'] = "Attendance";
+    {  
+      $data['header_title'] = "AMS - Attendance";
+      $data['nav_title'] = "Attendance Monitoring";
       $this->load->view('templates/dashboard_header',$data);
       $this->load->view('templates/dashboard_nav',$data);
       $this->load->view('pages/dashboard/attendance');
@@ -110,8 +112,9 @@ class Site extends CI_Controller
       if ($this->session->userdata('logged_in'))
       {
       $data['getAllUsers']   = $this->user_model->getAllUsers();
-      $data['header_title'] = "Manage Registered Taskers";
-      $data['title'] = "Manage Taskers";
+      $data['header_title'] = "AMS - Manage Accounts";
+      $data['nav_title'] = "Manage Accounts ";
+      $data['body_title'] = "Manage Accounts";
       $this->load->view('templates/dashboard_header',$data);
       $this->load->view('templates/dashboard_nav',$data);
       $this->load->view('pages/dashboard/manage_users');

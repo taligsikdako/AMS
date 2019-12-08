@@ -8,6 +8,7 @@ class User extends CI_Controller
         $this->load->helper('url');
         $this->load->model('user_model');
         $this->load->library('form_validation');
+        $this->load->library('session');
 	
 
         
@@ -31,17 +32,17 @@ class User extends CI_Controller
 
     function login()
     {
-        $this->load->library('session');
+      
 
-        $user_name = $this->input->post('user_name');
-        $user_password = $this->input->post('user_password');
+        // $user_name = $this->input->post('user_name');
+        // $user_password = $this->input->post('user_password');
 
-        $data_users = $this->user_model->login($user_name,$user_password);
+        // $data_users = $this->user_model->login($user_name,$user_password);
 
-        if($data_users)
-        {
-            $this->session->set_userdata('user',$users);
-        }
+        // if($data_users)
+        // {
+        //     $this->session->set_userdata('user',$users);
+        // }
     }
 
    
@@ -84,14 +85,15 @@ class User extends CI_Controller
 
     function update_user($id)
     {
-        $data['title'] = "Update Tasker's Profile";
-        $data['header_title'] = "Update Tasker's Profile";
+        $data['header_title'] = "AMS - Update User Profile";
+        $data['nav_title'] = "";
+        $data['body_title'] = "Update Profile";
         $user_id = $this->uri->segment(3);
         $data['fetch_user'] = $this->user_model->fetch_user($user_id);
-      $this->load->view('templates/dashboard_header',$data);
-      $this->load->view('templates/dashboard_nav',$data);
-      $this->load->view('pages/user/update_user');
-      $this->load->view('templates/dashboard_footer');
+        $this->load->view('templates/dashboard_header',$data);
+        $this->load->view('templates/dashboard_nav',$data);
+        $this->load->view('pages/user/update_user');
+        $this->load->view('templates/dashboard_footer');
     }
 
     function update_user_validation()
