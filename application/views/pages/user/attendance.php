@@ -15,8 +15,8 @@
                 <div class="table-responsive">
                   <table class="table" id="dataTable">
                     <thead class=" text-primary">
-                      <th>Date</th>
-                      <th>Name</th>
+                    <th>Name</th>
+                      <th>Date</th>                  
                       <th>Shift</th>
                       <th>TimeIn</th>
                       <th>Action</th>
