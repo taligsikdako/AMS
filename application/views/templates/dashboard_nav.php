@@ -130,7 +130,7 @@
                 <a class="nav-link btn-rotate" href="<?php echo base_url();?>index.php/site/logout" placeholder="Hey">
                 <i class="fa fa-sign-in" aria-hidden="true"></i>
                   <p>
-                    <span class="d-lg-none d-md-block">Account</span>
+                    <span class="d-lg-none d-md-block">Logout</span>
                   </p>
                 </a>
               </li>
