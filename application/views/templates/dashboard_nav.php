@@ -33,6 +33,7 @@
               <p>Attendance</p>
             </a>
           </li>
+          
           <li>
           <a href="<?php echo base_url();?>index.php/site/manage_users">
             <i class="fa fa-map-marker" aria-hidden="true"></i>

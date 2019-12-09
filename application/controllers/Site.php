@@ -71,6 +71,9 @@ class Site extends CI_Controller
         // Report Get NUmber of Registered Users
 				$usersNo = $this->report_model->get_NumberOfUsers();
         $data['totalUsersNo'] = $usersNo[0]->no;
+          // Report Get NUmber of Trainees
+				$usersNo = $this->report_model->get_NumberOfTrainee();
+        $data['totalTrainees'] = $usersNo[0]->no;
         
         $data['header_title'] = "AMS - Admin Dashboard";
         $data['nav_title'] = "Admin Dashboard ";
@@ -103,7 +106,7 @@ class Site extends CI_Controller
       $data['nav_title'] = "Attendance Monitoring";
       $this->load->view('templates/dashboard_header',$data);
       $this->load->view('templates/dashboard_nav',$data);
-      $this->load->view('pages/dashboard/attendance');
+      $this->load->view('pages/user/attendance');
       $this->load->view('templates/dashboard_footer');
     }
 
