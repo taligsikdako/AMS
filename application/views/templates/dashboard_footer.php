@@ -43,6 +43,17 @@
   <script src="<?php echo base_url(); ?>assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
   <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
   <script src="<?php echo base_url(); ?>assets/demo/demo.js"></script>
+  <!-- Modal Account creation -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <!-- Datatables -->
+  <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/datatables/jquery.datatables.min.js"></script>
+  <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/datatables/datatables.bootstrap4.min.js"></script>
+    <!-- Data Tables -->
+    <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/datatables/main.js"></script>
+  <!-- Custom Scripts -->
+  <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/datatables/datatables-demo.js"></script>
+  
   <script>
     $('#btnAddUserModal').click(function()
 {

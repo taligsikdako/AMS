@@ -103,7 +103,7 @@ class Site extends CI_Controller
     function attendance()
     {  
       $data['header_title'] = "AMS - Attendance";
-      $data['nav_title'] = "Attendance Monitoring";
+      $data['nav_title'] = "Attendance Monitoring System";
       $this->load->view('templates/dashboard_header',$data);
       $this->load->view('templates/dashboard_nav',$data);
       $this->load->view('pages/user/attendance');

@@ -10,7 +10,7 @@
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table">
+                  <table class="table" id="dataTable">
                     <thead class=" text-primary">
                       <th>Username</th>
                       <th>Name</th>

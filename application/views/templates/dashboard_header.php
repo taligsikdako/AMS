@@ -35,9 +35,8 @@ The above copyright notice and this permission notice shall be included in all c
   <link  href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?php echo base_url(); ?>assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet">
   <link  href="<?php echo base_url(); ?>assets/demo/demo.css" rel="stylesheet" >
-  <!-- Modal Account creation -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link  href="<?php echo base_url(); ?>assets/css/datatables.bootstrap4.css" rel="stylesheet" >
+  
 
 </head>
 
