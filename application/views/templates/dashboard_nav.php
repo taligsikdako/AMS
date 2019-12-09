@@ -22,20 +22,20 @@
           <!-- <li class="active "> -->
          
           <li>
-            <a href="<?php echo base_url();?>index.php/site/dashboard">
+            <a href="<?php echo base_url();?>site/dashboard">
             <i class="fa fa-home" aria-hidden="true"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-          <a href="<?php echo base_url();?>index.php/site/attendance">
+          <a href="<?php echo base_url();?>attendance/index">
           <i class="fa fa-times-circle-o" aria-hidden="true"></i>
               <p>Attendance</p>
             </a>
           </li>
           
           <li>
-          <a href="<?php echo base_url();?>index.php/site/manage_users">
+          <a href="<?php echo base_url();?>site/manage_users">
             <i class="fa fa-map-marker" aria-hidden="true"></i>
               <p>Manage Account</p>
             </a>

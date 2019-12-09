@@ -100,15 +100,15 @@ class Site extends CI_Controller
       $this->load->view('templates/dashboard_footer');
     }
 
-    function attendance()
-    {  
-      $data['header_title'] = "AMS - Attendance";
-      $data['nav_title'] = "Attendance Monitoring System";
-      $this->load->view('templates/dashboard_header',$data);
-      $this->load->view('templates/dashboard_nav',$data);
-      $this->load->view('pages/user/attendance');
-      $this->load->view('templates/dashboard_footer');
-    }
+    // function attendance()
+    // {  
+    //   $data['header_title'] = "AMS - Attendance";
+    //   $data['nav_title'] = "Attendance Monitoring System";
+    //   $this->load->view('templates/dashboard_header',$data);
+    //   $this->load->view('templates/dashboard_nav',$data);
+    //   $this->load->view('pages/user/attendance');
+    //   $this->load->view('templates/dashboard_footer');
+    // }
 
     function manage_users()
     {
