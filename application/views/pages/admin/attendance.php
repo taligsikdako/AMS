@@ -15,23 +15,16 @@
                 <div class="table-responsive">
                   <table class="table" id="dataTable">
                     <thead class=" text-primary">
-<<<<<<< HEAD
                       <th>Name</th>
                       <th>TimeIn</th>                     
-=======
-                    <th>Name</th>
-                      <th>Date</th>                  
->>>>>>> 09b7f1ebae53a9a3ebe9a963f0cd48c60d145a82
-                      <th>Shift</th>
-                      
-                      <th>Action</th>
-                  
+                      <th>Shift</th>                      
+                      <th>Action</th>                  
                     </thead>
                     <tbody>
                     <?php 
-                    if($fetchEmployeeLogs->num_rows() > 0)
+                    if($fetchAllEmployeeLogs->num_rows() > 0)
                     {
-                        foreach($fetchEmployeeLogs->result() as $row)
+                        foreach($fetchAllEmployeeLogs->result() as $row)
                         {                       
                     
                     ?>
@@ -100,7 +93,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-md-4">
             <div class="card card-chart">
               <div class="card-header">
                 <h5 class="card-title">Your Attendance Records</h5>
@@ -110,30 +103,34 @@
                 <!-- <canvas id="speedChart" width="400" height="100"></canvas> -->
                 <div class="table-responsive">
                   <table class="table" id="dataTable">
-                    <thead class=" text-primary">
+                    <thead class="text-primary">
+                      <th>Name</th>                
                       <th>LoggedIn</th>
-                      <th>Shift</th>
-                     
-                      <!-- <th>TimeOut</th> -->                                
-                      <!-- <th class="text-right">Salary</th> -->
+                      <th>Shift</th>                                           
                     </thead>
                     <tbody>
-                   
+                    <?php 
+                    if($fetchLoggedinByEmployee->num_rows() > 0)
+                    {
+                        foreach($fetchLoggedinByEmployee->result() as $row)
+                        {                       
+                    
+                    ?>
                       <tr>
-                        <td>December 9, 2019</td>
-                        <td>PM</td>                     
-                        <td>2PM</td>                  
+                        <td><?php echo $row->username; ?></td>                  
+                        <td><?php echo $row->time_in; ?></td>
+                        <td><?php echo $row->shift; ?></td>                                                    
                       </tr>
+                      <?php
+                      }
+                    } else {
+                      ?>                     
                       <tr>
-                        <td>December 10, 2019</td>
-                        <td>2PM to 9PM</td>                     
-                        <td>2PM</td>                  
-                      </tr>
-                     
-                        <tr>
                         <td>No Data Found</td>
                       </tr>
-                  
+                      <?php
+                    }
+                      ?>
                     </tbody>
                   </table>
                 </div>

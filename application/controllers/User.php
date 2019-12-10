@@ -29,23 +29,7 @@ class User extends CI_Controller
             $this->load->view('login_page');
         }
     }
-
-    function login()
-    {
-      
-
-        // $user_name = $this->input->post('user_name');
-        // $user_password = $this->input->post('user_password');
-
-        // $data_users = $this->user_model->login($user_name,$user_password);
-
-        // if($data_users)
-        // {
-        //     $this->session->set_userdata('user',$users);
-        // }
-    }
-
-   
+  
 
     function registration()
     {
@@ -79,12 +63,14 @@ class User extends CI_Controller
         else {
             $this->user_model->new_registration();
             $this->session->set_flashdata('members_added','New members has been added successfully');
-            redirect('index.php/user/registration');
+            redirect('user/registration');
         }            
     }
 
     function update_user($id)
     {
+        if ($this->session->userdata('logged_in'))
+      {
         $data['header_title'] = "AMS - Update User Profile";
         $data['nav_title'] = "";
         $data['body_title'] = "Update Profile";
@@ -94,6 +80,9 @@ class User extends CI_Controller
         $this->load->view('templates/dashboard_nav',$data);
         $this->load->view('pages/user/update_user');
         $this->load->view('templates/dashboard_footer');
+      } else  {
+         redirect(base_url());
+      }
     }
 
     function update_user_validation()
@@ -113,7 +102,7 @@ class User extends CI_Controller
         {
             $this->user_model->update_user($data, $this->input->post('hidden_id'));
             $this->session->set_flashdata('user_updated','Tasker users has been updated successfully');
-            redirect('index.php/site/manage_users');
+            redirect('site/manage_users');
         }
     }
 }

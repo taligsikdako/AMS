@@ -16,9 +16,16 @@ class Report_Model extends CI_Model
         return $query->result();
     }
 
-    function fetchEmployeeLogs()
+    function fetchAllEmployeeLogs()
     {        
         $query = $this->db->get('att_logs');        
+        return $query;
+    }
+
+    function fetchLoggedinByEmployee()
+    {       
+        // $this->db->where($this->session->userdata('username'));   
+        $query = $this->db->get('att_logs');          
         return $query;
     }
 }

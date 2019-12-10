@@ -13,7 +13,7 @@
 <div class="auth-form px-3" id="login">
 
     <!-- '"` --><!-- </textarea></xmp> --></option></form>
-    <form name =""action="<?php echo base_url(); ?>index.php/site/login_validation"  method="post">
+   
     <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="KjrG1Hob1uJUSjxSCtlMHXD0JIyPvdVSOHwr90w8bSkCEiWYQcqzrm1r06wPxLFgXPcTRJy91k+BTMEZSDLhYQ==" />      <input type="hidden" name="ga_id" class="js-octo-ga-id-input">
       <div class="auth-form-header p-0">
         <h1>Attendance Monitoring System</h1>
@@ -24,7 +24,7 @@
 
 </div>
 
-
+<form name =""action="<?php echo base_url(); ?>index.php/site/login_validation"  method="post">
       <div class="auth-form-body mt-3">
       <span class="text-danger"><?php echo validation_errors(); ?></span>
       <?php if($this->session->flashdata('failed_login')) : ?>
@@ -51,7 +51,7 @@
         <div class="text-center">
            <!-- <a class="small"  data-toggle="modal" data-target="#myModal">Create an Account!</a> -->
            <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
-                            <a class="small" id="btnAddUserModal" href="<?php echo base_url();?>index.php/user/registration">Create an Account!</a>
+                            <a class="small" id="btnAddUserModal" href="<?php echo base_url();?>user/registration">Create an Account!</a>
                   </div>
       </div>
     
