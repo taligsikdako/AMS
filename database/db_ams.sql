@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2019 at 12:40 AM
+-- Generation Time: Dec 12, 2019 at 01:30 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -40,10 +40,18 @@ CREATE TABLE `att_logs` (
 --
 
 INSERT INTO `att_logs` (`id`, `username`, `time_in`, `shift`) VALUES
-(1, 'agent0', '2019-12-09 23:02:11', ''),
+(1, 'agent0', '2019-12-09 23:02:11', '6AM to 2PM'),
 (2, 'agent0', '2019-12-09 23:17:29', '2PM to 9PM'),
 (3, 'arjay.cobarde', '2019-12-09 23:33:35', '2PM to 9PM'),
-(4, 'junkimming', '2019-12-09 23:39:28', '6AM to 2PM');
+(4, 'junkimming', '2019-12-09 23:39:28', '6AM to 2PM'),
+(5, 'lawrence', '2019-12-09 23:47:59', '6AM to 2PM'),
+(6, 'lawrence', '2019-12-10 00:08:59', '2PM to 9PM'),
+(7, 'lawrence', '2019-12-10 00:09:09', '6AM to 2PM'),
+(8, 'arjay.cobarde', '2019-12-10 02:10:10', '2PM to 9PM'),
+(9, 'arjay.cobarde', '2019-12-10 02:10:45', '2PM to 9PM'),
+(10, 'dantley.kasaysayan', '2019-12-10 02:50:36', '6AM to 2PM'),
+(11, 'junkimming', '2019-12-10 05:31:15', '6AM to 2PM'),
+(12, 'arjay.cobarde', '2019-12-10 06:14:10', '2PM to 9PM');
 
 -- --------------------------------------------------------
 
@@ -79,7 +87,8 @@ INSERT INTO `users` (`id`, `username`, `password`, `fname`, `lname`, `user_group
 (13, 'rodramel', 'd41d8cd98f00b204e9800998ecf8427e', 'Rod', 'Cantiveros', 'Administrator', 'Active', '2019-12-07 03:59:24', 'rodcantiveros@gmail.com', '09165046255', 'Minglanilla, Cebu'),
 (17, 'junkimming', '2ac9cb7dc02b3c0083eb70898e549b63', 'Kimoy', 'Balmori', 'Trainer', 'InActive', '2019-12-07 05:07:04', 'kimoy@gmail.com', '0916548899', 'Pulpogan, Cebu'),
 (18, 'engelbert', 'd41d8cd98f00b204e9800998ecf8427e', 'Engel', 'Litonjua', 'Trainer', 'InActive', '2019-12-07 05:12:23', 'engel.lintonjua@gmail.com', '091565444', 'Purok 2 Sityo Gumamela, Consolacion Cebu'),
-(19, 'macky', 'd41d8cd98f00b204e9800998ecf8427e', 'Macky', 'Laranjo', 'Trainee', 'InActive', '2019-12-07 07:08:09', 'mackylaranjo@gmail.com', '091652246688', 'Sitio Gumamela Pulpogan Consolacion, Cebu');
+(19, 'macky', 'd41d8cd98f00b204e9800998ecf8427e', 'Macky', 'Laranjo', 'Trainee', 'InActive', '2019-12-07 07:08:09', 'mackylaranjo@gmail.com', '091652246688', 'Sitio Gumamela Pulpogan Consolacion, Cebu'),
+(20, 'janriel', '2ac9cb7dc02b3c0083eb70898e549b63', 'Janriel', 'Paanod', '', 'InActive', '2019-12-10 02:12:37', 'janriel.paanod@gmail.com', '09156644654', 'M1v Phase Pulpogan Consolacion Cebu');
 
 --
 -- Indexes for dumped tables
@@ -105,13 +114,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `att_logs`
 --
 ALTER TABLE `att_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
