@@ -7,6 +7,12 @@
           <div class="col-md-12">
             <div class="card ">
               <div class="card-header ">
+              <!--  -->
+              <?php if($this->session->flashdata('employee_loggedin')) : ?>
+          <?php echo '<p class="alert alert-success">'.$this->session->flashdata('employee_loggedin').'</p>'; ?>
+          <?php endif; ?>
+          <span class="text-danger"><?php echo form_error('select_shift'); ?></span>
+          <!--  -->
                 <h5 class="card-title">Attendance Monitoring System</h5>
                 <p class="card-category">attendance logs</p>
               </div>
@@ -66,21 +72,19 @@
               <div class="card-header ">
                 <h5 class="card-title">AMS - Login</h5>
                 <p class="card-category">Select your shift then click login</p>
-                <?php if($this->session->flashdata('employee_loggedin')) : ?>
-          <?php echo '<p class="alert alert-success">'.$this->session->flashdata('employee_loggedin').'</p>'; ?>
-          <?php endif; ?>
+                    
   
              <?php  echo "Today is  " . date("m/d/Y"); ?>
               </div>
               <div class="card-body ">
-              <?php echo form_open('attendance/employee_loggedin'); ?>
+              <?php echo form_open('index.php/attendance/employee_loggedin'); ?>
               <div class="dropdown">
               <select class="btn btn-default" value="" name="select_shift">
                       <option  selected="" disabled="">--Select your Shift--</option>
                       <option value="6AM to 2PM">6AM to 2PM</option>
                       <option value="2PM to 9PM">2PM to 9PM</option>
                                        </select>
-                  <span class="text-danger"><?php echo form_error('select_shift'); ?></span>
+             
                                        </div>
               <button type="submit" class="btn btn-primary" value="Login">Login</button>
               <input type="button" class="btn btn-primary" value="Logout" disabled>

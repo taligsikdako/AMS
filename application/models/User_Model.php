@@ -1,24 +1,25 @@
-<?php 
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class User_Model extends CI_Model
+class User_model extends CI_Model
 {
+    var $user_table = 'users';
     function __construct()
     {
         parent:: __construct();
         $this->load->database();
     }
 
-    public function login($username,$password)
+    public function can_login($username,$password)
     {
         $this->db->where('username', $username);
-        $this->db->where('password', $password);
+        $this->db->where('password', $password);    
 
          $result = $this->db->get('users');
         if($result->num_rows() === 1) {
           return $result->row();
-    }   else {
+        }   else {
         return false;
-    }    
+        }    
 
     }
 
@@ -45,10 +46,10 @@ class User_Model extends CI_Model
         return $query;
     }
 
-    function update_user($data,$id)
+    function update_user($updatedata,$id)
     {
         $this->db->where('id',$id);
-        $this->db->update('users',$data);
+        $this->db->update('users',$updatedata);
     }
 
     function fetch_user($id)
@@ -57,4 +58,40 @@ class User_Model extends CI_Model
         $query = $this->db->get('users');
         return $query;
     }
+
+    function update_password($username,$password)
+    {
+        $data = array(
+            'password' => md5($password)
+        );
+        $this->db->where('username',$username);
+        $this->db->update($this->user_table,$data);
+    }
+
+    function check_username_exists($username)
+    {
+         $query = $this->db->get_where('users',array('username'=> $username));
+         if(empty($query->row_array())){
+             return true;
+         } else {
+             return false;
+         }
+     }
+     function check_email_exists($email)
+     {
+          $query = $this->db->get_where('users',array('user_email'=> $email));
+          if(empty($query->row_array())){
+              return true;
+          } else {
+              return false;
+          }
+      }
+
+
+     function get_usergroup() // Fetch created user groups
+     {
+         // $this->db->order_by('UserRoles');
+         $query = $this->db->get('user_group');
+         return $query->result_array();
+     } 
 }

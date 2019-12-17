@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
--- https://www.phpmyadmin.net/
+-- version 4.5.2
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 12, 2019 at 01:30 AM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 5.6.36
+-- Host: localhost
+-- Generation Time: Dec 17, 2019 at 09:44 AM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.6.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -31,27 +29,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `att_logs` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `time_in` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `shift` varchar(255) NOT NULL
+  `shift` varchar(255) NOT NULL,
+  `time_in` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `att_logs`
 --
 
-INSERT INTO `att_logs` (`id`, `username`, `time_in`, `shift`) VALUES
-(1, 'agent0', '2019-12-09 23:02:11', '6AM to 2PM'),
-(2, 'agent0', '2019-12-09 23:17:29', '2PM to 9PM'),
-(3, 'arjay.cobarde', '2019-12-09 23:33:35', '2PM to 9PM'),
-(4, 'junkimming', '2019-12-09 23:39:28', '6AM to 2PM'),
-(5, 'lawrence', '2019-12-09 23:47:59', '6AM to 2PM'),
-(6, 'lawrence', '2019-12-10 00:08:59', '2PM to 9PM'),
-(7, 'lawrence', '2019-12-10 00:09:09', '6AM to 2PM'),
-(8, 'arjay.cobarde', '2019-12-10 02:10:10', '2PM to 9PM'),
-(9, 'arjay.cobarde', '2019-12-10 02:10:45', '2PM to 9PM'),
-(10, 'dantley.kasaysayan', '2019-12-10 02:50:36', '6AM to 2PM'),
-(11, 'junkimming', '2019-12-10 05:31:15', '6AM to 2PM'),
-(12, 'arjay.cobarde', '2019-12-10 06:14:10', '2PM to 9PM');
+INSERT INTO `att_logs` (`id`, `username`, `shift`, `time_in`) VALUES
+(10, 'team_support', '6AM to 2PM', '2019-12-17 16:43:22');
 
 -- --------------------------------------------------------
 
@@ -65,7 +52,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `fname` varchar(25) NOT NULL,
   `lname` varchar(255) NOT NULL,
-  `user_group` varchar(255) NOT NULL,
+  `user_group` varchar(255) NOT NULL DEFAULT 'Trainee',
   `user_status` varchar(255) NOT NULL DEFAULT 'InActive',
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_email` varchar(255) NOT NULL,
@@ -78,17 +65,33 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `fname`, `lname`, `user_group`, `user_status`, `date_created`, `user_email`, `contactNumber`, `address`) VALUES
-(1, 'agent0', '2ac9cb7dc02b3c0083eb70898e549b63', 'User', 'Agent', 'Administrator', 'Active', '2019-12-03 23:09:24', 'useragent@localhost.com', '09165548888', 'Agentx44'),
-(6, 'arjay.cobarde', '2ac9cb7dc02b3c0083eb70898e549b63', 'Arjay', 'Cobarde', 'Trainee', 'Active', '2019-12-06 07:02:08', 'arjayburlas@gmail.com', '09165042601', 'Pulpogan Consolacion Cebu'),
-(8, 'mark.sarcon', '2ac9cb7dc02b3c0083eb70898e549b63', 'Mark', 'Sarcon', 'Trainer', 'Active', '2019-12-06 07:27:52', 'mark.sarcon@gmail.com', '0916502559988', 'T Padilla Cebu City'),
-(9, 'dantley.kasaysayan', '2ac9cb7dc02b3c0083eb70898e549b63', 'Dantley', 'Kasaysayan', 'Trainer', 'InActive', '2019-12-06 07:28:47', 'dantley@gmail.com', '0916502601', 'Basak Pardo Cebu City'),
-(11, 'lawrence', '2ac9cb7dc02b3c0083eb70898e549b63', 'Lawrence Joseph', 'Tan', 'Trainee', 'InActive', '2019-12-07 03:32:23', 'lawren.tan@gmail.com', '09486655466', 'Labangon Cebu City'),
-(12, 'william', '2ac9cb7dc02b3c0083eb70898e549b63', 'William Jr.', 'Genelza', 'Trainee', 'InActive', '2019-12-07 03:34:11', 'william.genelza@gmail.com', '091565466', 'Consolacion, Cebu'),
-(13, 'rodramel', 'd41d8cd98f00b204e9800998ecf8427e', 'Rod', 'Cantiveros', 'Administrator', 'Active', '2019-12-07 03:59:24', 'rodcantiveros@gmail.com', '09165046255', 'Minglanilla, Cebu'),
-(17, 'junkimming', '2ac9cb7dc02b3c0083eb70898e549b63', 'Kimoy', 'Balmori', 'Trainer', 'InActive', '2019-12-07 05:07:04', 'kimoy@gmail.com', '0916548899', 'Pulpogan, Cebu'),
-(18, 'engelbert', 'd41d8cd98f00b204e9800998ecf8427e', 'Engel', 'Litonjua', 'Trainer', 'InActive', '2019-12-07 05:12:23', 'engel.lintonjua@gmail.com', '091565444', 'Purok 2 Sityo Gumamela, Consolacion Cebu'),
-(19, 'macky', 'd41d8cd98f00b204e9800998ecf8427e', 'Macky', 'Laranjo', 'Trainee', 'InActive', '2019-12-07 07:08:09', 'mackylaranjo@gmail.com', '091652246688', 'Sitio Gumamela Pulpogan Consolacion, Cebu'),
-(20, 'janriel', '2ac9cb7dc02b3c0083eb70898e549b63', 'Janriel', 'Paanod', '', 'InActive', '2019-12-10 02:12:37', 'janriel.paanod@gmail.com', '09156644654', 'M1v Phase Pulpogan Consolacion Cebu');
+(21, 'arjay.cobarde', '2ac9cb7dc02b3c0083eb70898e549b63', 'Arjay', 'Cobarde', 'Team Lead', 'Active', '2019-12-17 06:36:55', 'arjayburlas@gmail.com', '091650455488', 'Pulpogan 2 Consolacion Cebu'),
+(22, 'trainee_team', '2ac9cb7dc02b3c0083eb70898e549b63', 'Trainee', 'Team', 'Trainee', 'InActive', '2019-12-17 07:37:29', 'trainee_team@gmail.com', '091654888', 'Team Trainee Aasfsa '),
+(23, 'trainer_team', '4297f44b13955235245b2497399d7a93', 'Trainer', 'Team', 'Trainer', 'InActive', '2019-12-17 07:39:47', 'trainer_team@gmail.com', '23123', 'Team Trainer Asdfasdfsa'),
+(24, 'team_lead', '4297f44b13955235245b2497399d7a93', 'Team', 'Lead', 'Team Lead', 'InActive', '2019-12-17 07:58:03', 'team_lead@gmail.com', '123123123', 'Team Lead'),
+(25, 'team_support', '4297f44b13955235245b2497399d7a93', 'Team', 'Support', 'Team Support', 'InActive', '2019-12-17 07:59:51', 'team_support@gmail.com', '09125648899', 'Adasd Asdfsaf Asdfasdfsa Asdfsad');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_group`
+--
+
+CREATE TABLE `user_group` (
+  `id` int(11) NOT NULL,
+  `user_group` varchar(255) NOT NULL,
+  `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_group`
+--
+
+INSERT INTO `user_group` (`id`, `user_group`, `date_created`) VALUES
+(1, 'Team Lead', '2019-12-17 08:17:30'),
+(2, 'Trainer', '2019-12-17 08:17:30'),
+(3, 'Trainee', '2019-12-17 08:17:45'),
+(4, 'Team Support', '2019-12-17 08:40:02');
 
 --
 -- Indexes for dumped tables
@@ -107,6 +110,12 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `user_group`
+--
+ALTER TABLE `user_group`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -114,15 +123,17 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `att_logs`
 --
 ALTER TABLE `att_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+--
+-- AUTO_INCREMENT for table `user_group`
+--
+ALTER TABLE `user_group`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

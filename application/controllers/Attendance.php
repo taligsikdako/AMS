@@ -41,12 +41,12 @@ class Attendance extends CI_Controller
             $data['nav_title'] = "Attendance Monitoring System";
             $this->load->view('templates/dashboard_header',$data);
             $this->load->view('templates/dashboard_nav',$data);
-            $this->load->view('pages/user/attendance',$data);
+            $this->load->view('pages/admin/attendance',$data);
             $this->load->view('templates/dashboard_footer');
         } else {
             $this->attendance_model->employee_loggedin();
             $this->session->set_flashdata('employee_loggedin','You have loggedin successfully');
-            redirect('attendance');
+            redirect('index.php/attendance');
         }
       
 

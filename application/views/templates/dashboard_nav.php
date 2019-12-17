@@ -5,12 +5,12 @@
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
       <div class="logo">
-        <a href="<?php echo base_url();?>site/dashboard" class="simple-text logo-mini">
+        <a href="<?php echo base_url();?>index.php/site/dashboard" class="simple-text logo-mini">
           <div class="logo-image-small">
             <img src="<?php echo base_url(); ?>assets/img/logo-small.png">
           </div>
         </a>
-        <a href="<?php echo base_url();?>site/dashboard" class="simple-text logo-normal">
+        <a href="<?php echo base_url();?>index.php/site/dashboard" class="simple-text logo-normal">
          <?php echo $this->session->userdata('username'); ?>
           <!-- <div class="logo-image-big">
             <img src="../assets/img/logo-big.png">
@@ -22,20 +22,20 @@
           <!-- <li class="active "> -->
          
           <li>
-            <a href="<?php echo base_url();?>site/dashboard">
+            <a href="<?php echo base_url();?>index.php/site/dashboard">
             <i class="fa fa-home" aria-hidden="true"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-          <a href="<?php echo base_url();?>attendance">
+          <a href="<?php echo base_url();?>index.php/admin/attendance">
           <i class="fa fa-times-circle-o" aria-hidden="true"></i>
               <p>Attendance</p>
             </a>
           </li>
           
           <li>
-          <a href="<?php echo base_url();?>site/account_management">
+          <a href="<?php echo base_url();?>index.php/site/accounts">
             <i class="fa fa-map-marker" aria-hidden="true"></i>
               <p>Manage Account</p>
             </a>
@@ -58,12 +58,12 @@
               <p>Activity List</p>
             </a>
           </li> -->
-          <!-- <li>
-            <a href="./typography.html">
+          <li>
+            <a href="<?php echo base_url(); ?>index.php/training">
             <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
               <p>Training Schedule</p>
             </a>
-          </li> -->
+          </li>
           <!-- <li class="active-pro">
             <a href="./upgrade.html">
             <i class="fa fa-rocket" aria-hidden="true"></i>
@@ -113,27 +113,27 @@
                   </p>
                 </a>
               </li> -->
-              <!-- <li class="nav-item btn-rotate dropdown">
+              <li class="nav-item btn-rotate dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-bell" aria-hidden="true"></i>
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
                   <p>
-                    <span class="d-lg-none d-md-block">Some Actions</span>
+                    <span class="d-lg-none d-md-block">Logout</span>
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item" href="#">My Profile</a>
+                  <a class="dropdown-item" href="$" href="#" data-toggle="modal" data-target="#ChangePassword" >Change Password</a>
+                  <a class="dropdown-item" href="<?php echo base_url();?>index.php/site/logout">Logout</a>
                 </div>
-              </li> -->
-              <li class="nav-item">
+              </li>
+              <!-- <li class="nav-item">
                 <a class="nav-link btn-rotate" href="<?php echo base_url();?>index.php/site/logout" placeholder="Hey">
                 <i class="fa fa-sign-in" aria-hidden="true"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Logout</span>
                   </p>
                 </a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>

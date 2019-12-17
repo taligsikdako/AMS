@@ -3,8 +3,12 @@
 <?php if($this->session->flashdata('members_added')) : ?>
           <?php echo '<p class="alert alert-success">'.$this->session->flashdata('members_added').'</p>'; ?>
           <?php endif; ?>
+
+          <?php if($this->session->flashdata('user_exist')) : ?>
+          <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_exist').'</p>'; ?>
+          <?php endif; ?>
   <h1><?php echo $title; ?></h1>
-  <?php echo form_open('user/members_registration'); ?>
+  <?php echo form_open('index.php/user/members_registration'); ?>
 
 
   <div class="form-group row">

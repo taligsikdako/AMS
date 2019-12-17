@@ -39,7 +39,7 @@
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Trainees</p>
-                      <p class="card-title"><?php echo $totalTrainees; ?>
+                      <p class="card-title">10
                         <p>
                     </div>
                   </div>

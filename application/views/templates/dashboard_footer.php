@@ -1,3 +1,56 @@
+<!-- Changepassword Modal-->
+<div class="modal fade" id="ChangePassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+
+
+      <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button>
+
+    </div>
+    <div class="modal-body">
+      <!-- <form method="post" id="password_update_form"> -->
+        <?php echo form_open("index.php/user/update_password_validation", array("id" => "update-password", "class" => "form-horizontal")) ?>
+      <input type="hidden" id="form-type" value="">
+      <input type="hidden" name="id" id="id" value="">
+      <div class="row">
+        <div class="col-sm-6 col-md-12">
+              <div id="the-message"></div>
+          <div  class="form-group ">
+            <div class="col-sm-12">
+              <label class="control-label">
+              New Password
+              </label>
+              <input type="password" class="form-control" id="new_password" name="new_password">
+              <span class="text-danger"><?php echo form_error('new_password'); ?></span>
+            </div>
+          </div><!-- /form-group -->
+          <div class="form-group ">
+            <div class="col-sm-12">
+              <label class="control-label">
+              Confirm Password
+              </label>
+              <input type="password" class="form-control" id="confirm_password"  name="confirm_password">
+              <span class="text-danger"><?php echo form_error('confirm_password'); ?></span>
+              </div>
+              </div>
+            </div>
+              </div>
+
+            </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" type="button" value="update" data-dismiss="modal">Cancel</button>
+      <input type="submit" name="insert" id="insert" value="Update" class="btn btn-primary">
+    </div>
+      </form>
+  </div>
+</div>
+</div>
+
 <footer class="footer footer-black  footer-white ">
         <div class="container-fluid">
           <div class="row">
@@ -53,8 +106,63 @@
     <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/datatables/main.js"></script>
   <!-- Custom Scripts -->
   <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/datatables/datatables-demo.js"></script>
+  <!-- Custom JS Files -->
+  <!-- <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/custom/custom.js"></script> -->
   
   <script>
+// Update password Begin
+$('#update-password').submit(function(e) {
+    e.preventDefault();
+    var me = $(this);
+    
+    // perform ajax
+    $.ajax({
+    // url: me.attr('action'),
+    url: '<?php echo base_url(); ?>index.php/user/update_password_validation',
+    type: 'post',
+    data: me.serialize(),
+    dataType: 'json',
+    success: function(response) {
+    if (response.success == true) {
+      // if success we would show message
+      // and also remove the error class
+      $('#the-message').append('<div class="alert alert-success">' +
+        '<span class="glyphicon glyphicon-ok"></span>' +
+        ' Password has been updated' +
+        '</div>');
+      $('.form-group').removeClass('has-error')
+              .removeClass('has-success');
+      $('.text-danger').remove();
+    
+      // reset the form
+      me[0].reset();
+    
+      // close the message after seconds
+      $('.alert-success').delay(500).show(10, function() {
+        $(this).delay(3000).hide(10, function() {
+          $(this).remove();
+    
+        });
+      })
+    }
+    
+    else {
+      $.each(response.messages, function(key, value) {
+        var element = $('#' + key);
+    
+        element.closest('div.form-group')
+        .removeClass('has-error')
+        .addClass(value.length > 0 ? 'has-error' : 'has-success')
+        .find('.text-danger')
+        .remove();
+        element.after(value);
+      });
+    }
+    }
+    });
+    });
+    // update password end
+
     $('#btnAddUserModal').click(function()
 {
   $('#AddUsersModal').modal('show');

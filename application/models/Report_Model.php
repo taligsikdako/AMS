@@ -1,6 +1,6 @@
 <?php
 
-class Report_Model extends CI_Model
+class Report_model extends CI_Model
 {
     function get_NumberOfUsers() //Number of registered users
     {

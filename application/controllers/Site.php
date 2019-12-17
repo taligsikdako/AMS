@@ -24,7 +24,7 @@ class Site extends CI_Controller
         $this->load->view('templates/login_footer', $data);
     }
  
-    function login_validation()
+    function login_validation() //verify user if credential exist
     {
        $this->form_validation->set_rules('username','username','required');
        $this->form_validation->set_rules('password','user password','required');
@@ -36,22 +36,21 @@ class Site extends CI_Controller
         $username = $this->input->post('username');
         $password = md5($this->input->post('password'));
 
-        $user_id = $this->user_model->login($username,$password);
+        $user_id = $this->user_model->can_login($username,$password);
         if($user_id) {
           //create sessions
-            $user_data = array (
-              'id' => $user_id->id, 
+            $userdata = array (      
+              'id'       => $user_id->id,
               'username' => $username,           
-              'password' => $password,           
-              // 'user_group' => $user_id->$user_group,
-              // 'user_status' => $user_id->$user_status,
-              // 'user_email' => $user_id->$user_email,
+              'password' => $password,   
+              'user_group' => $user_id->usergroup,
               'logged_in' => true
             );
-            $this->session->set_userdata($user_data);
+            $this->session->set_userdata($userdata);
+
             $this->session->set_flashdata('user_loggedin','Welcome, ');
-            redirect(base_url() . 'site/dashboard');
-            // die('login success');
+            redirect(base_url() . 'index.php/site/dashboard');
+   
         } else {
             			 //Set message
 			 $this->session->set_flashdata('failed_login','Login is Invalid');
@@ -104,7 +103,7 @@ class Site extends CI_Controller
       $this->load->view('templates/dashboard_footer');
     }
 
-    function account_management()
+    function accounts()
     {
       if ($this->session->userdata('logged_in'))
       {
@@ -114,7 +113,7 @@ class Site extends CI_Controller
       $data['body_title'] = "Manage Accounts";
       $this->load->view('templates/dashboard_header',$data);
       $this->load->view('templates/dashboard_nav',$data);
-      $this->load->view('pages/admin/account_management');
+      $this->load->view('pages/admin/account_list');
       $this->load->view('templates/dashboard_footer');
       }
       else {

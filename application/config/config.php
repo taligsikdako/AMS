@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-// $config['base_url'] = 'http://localhost:8080/ams';
-$config['base_url'] = 'http://intranetmsit.amberbase.eagleview.com/AMS';
+$config['base_url'] = 'http://localhost:8080/AMS';
+// $config['base_url'] = 'http://intranetmsit.amberbase.eagleview.com/AMS';
 // $config['base_url'] = 'http://192.168.0.134:8080/ams';
 
 /*

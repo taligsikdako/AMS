@@ -1,6 +1,6 @@
 <?php
 
-class Attendance_Model extends CI_Model
+class Attendance_model extends CI_Model
 {
     function employee_loggedin()
     {

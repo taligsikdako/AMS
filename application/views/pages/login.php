@@ -51,7 +51,7 @@
         <div class="text-center">
            <!-- <a class="small"  data-toggle="modal" data-target="#myModal">Create an Account!</a> -->
            <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
-                            <a class="small" id="btnAddUserModal" href="<?php echo base_url();?>user/registration">Create an Account!</a>
+                            <a class="small" id="btnAddUserModal" href="<?php echo base_url();?>index.php/user/registration">Create an Account!</a>
                   </div>
       </div>
     
